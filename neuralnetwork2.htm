@@ -1,8 +1,8 @@
 Version:0.9
 StartHTML:0000000105
-EndHTML:0000184580
+EndHTML:0000184726
 StartFragment:0000001053
-EndFragment:0000184564
+EndFragment:0000184710
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -221,7 +221,7 @@ end;
 </span><span class="pas1-space">  FMomentumRate </span><span class="pas1-symbol">:=</span><span class="pas1-float">0.39</span><span class="pas1-symbol">;
 </span><span class="pas1-space">  </span><span class="pas1-comment">//Width := 120;
 </span><span class="pas1-space">  </span><span class="pas1-comment">//Height :=120;
-</span><span class="pas1-space">  NeuronWidth</span><span class="pas1-symbol">:=5;
+</span><span class="pas1-space">  FNeuronWidth</span><span class="pas1-symbol">:=15;
 </span><span class="pas1-space">  FRMSError</span><span class="pas1-symbol">:=1;
 </span><span class="pas1-space">  FNumberOfTraining</span><span class="pas1-symbol">:=1;
 </span><span class="pas1-reservedword">end</span><span class="pas1-symbol">;
@@ -350,7 +350,6 @@ if</span><span class="pas1-space"> </span><span class="pas1-reservedword">not</s
 </span><span class="pas1-space">   </span><span class="pas1-reservedword">else</span><span class="pas1-space"> </span><span class="pas1-reservedword">begin
 </span><span class="pas1-space">        FNetwork</span><span class="pas1-symbol">.</span><span class="pas1-identifier">Clear</span><span class="pas1-symbol">;
 </span><span class="pas1-space">        </span><span class="pas1-comment">// File Format
-
 </span><span class="pas1-space">        </span><span class="pas1-comment">//Read(Dosya1,FNetHeader); //Read(Dosya1,FirstLine);
 </span><span class="pas1-space">        FLayersNumber</span><span class="pas1-symbol">:=</span><span class="pas1-identifier">FNetHeader</span><span class="pas1-symbol">.</span><span class="pas1-identifier">KTMNSYS</span><span class="pas1-symbol">;
 </span><span class="pas1-space">        FLearningRate</span><span class="pas1-symbol">:=</span><span class="pas1-identifier">FNetHeader</span><span class="pas1-symbol">.</span><span class="pas1-identifier">OO</span><span class="pas1-symbol">;
@@ -375,7 +374,7 @@ if</span><span class="pas1-space"> </span><span class="pas1-reservedword">not</s
 </span><span class="pas1-space">        </span><span class="pas1-reservedword">for</span><span class="pas1-space"> i</span><span class="pas1-symbol">:=0</span><span class="pas1-space"> </span><span class="pas1-reservedword">to</span><span class="pas1-space"> High</span><span class="pas1-symbol">(</span><span class="pas1-identifier">Biases</span><span class="pas1-symbol">)</span><span class="pas1-space"> </span><span class="pas1-reservedword">do
 </span><span class="pas1-space">           </span><span class="pas1-reservedword">for</span><span class="pas1-space"> j</span><span class="pas1-symbol">:=0</span><span class="pas1-space"> </span><span class="pas1-reservedword">to</span><span class="pas1-space"> High</span><span class="pas1-symbol">(</span><span class="pas1-identifier">Biases</span><span class="pas1-symbol">[</span><span class="pas1-identifier">i</span><span class="pas1-symbol">])</span><span class="pas1-space"> </span><span class="pas1-reservedword">do</span><span class="pas1-space"> </span><span class="pas1-reservedword">begin
 </span><span class="pas1-space">                </span><span class="pas1-comment">//Read(Dosya2,FWeightsinFile);
-</span><span class="pas1-space">		Biases</span><span class="pas1-symbol">[</span><span class="pas1-identifier">i</span><span class="pas1-symbol">][</span><span class="pas1-identifier">j</span><span class="pas1-symbol">]:=</span><span class="pas1-identifier">FWeightsinFile</span><span class="pas1-symbol">.</span><span class="pas1-identifier">Value</span><span class="pas1-symbol">;
+</span><span class="pas1-space">	      	Biases</span><span class="pas1-symbol">[</span><span class="pas1-identifier">i</span><span class="pas1-symbol">][</span><span class="pas1-identifier">j</span><span class="pas1-symbol">]:=</span><span class="pas1-identifier">FWeightsinFile</span><span class="pas1-symbol">.</span><span class="pas1-identifier">Value</span><span class="pas1-symbol">;
 </span><span class="pas1-space">           </span><span class="pas1-reservedword">end</span><span class="pas1-symbol">;
 
 </span><span class="pas1-space">        </span><span class="pas1-reservedword">for</span><span class="pas1-space"> i</span><span class="pas1-symbol">:=0</span><span class="pas1-space"> </span><span class="pas1-reservedword">to</span><span class="pas1-space"> High</span><span class="pas1-symbol">(</span><span class="pas1-identifier">Neurons</span><span class="pas1-symbol">[0])</span><span class="pas1-space"> </span><span class="pas1-reservedword">do</span><span class="pas1-space"> </span><span class="pas1-comment">//All inputs range
@@ -726,7 +725,8 @@ end</span><span class="pas1-symbol">;</span><span class="pas1-space">
 </span><span class="pas1-space">    </span><span class="pas1-reservedword">end</span><span class="pas1-symbol">;
 </span><span class="pas1-space">  loaddrawform
   DrawNetwork</span><span class="pas1-symbol">();</span><span class="pas1-space"> 
-  destroyNetwork</span><span class="pas1-symbol">();</span><span class="pas1-space">  
+  </span><span class="pas1-comment">//aimg.picture.savetofile(exepath+'examples\1234_neuralnetgraph.bmp');
+</span><span class="pas1-space">  destroyNetwork</span><span class="pas1-symbol">();</span><span class="pas1-space">  
  </span><span class="pas1-reservedword">end</span><span class="pas1-symbol">.
 </span><span class="pas1-reservedword">end</span><span class="pas1-symbol">.
 
