@@ -1,5 +1,5 @@
 # TNeuralNetwork
-# TNeuralNetwork Component For Delphi
+# TNeuralNetwork Component For Delphi and maXbox4
 
 TNeuralNetwork is a general purpose component to be used under Delphi to develop intelligent programs ranging from signal processing to intelligent internet applications. It uses a mixture of Artificial Neural Network Technology to converge to correct solutions with shorter training times. It is quite flexible and accepts different ranges of inputs and outputs defined by the user. Network allows any number of hidden layers and the structure of the network can be visually displayed.
 
